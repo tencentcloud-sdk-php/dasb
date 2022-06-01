@@ -18,26 +18,19 @@ namespace TencentCloud\Dasb\V20191018\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeAcls返回参数结构体
+ * CreateUserGroup返回参数结构体
  *
- * @method integer getTotalCount() 获取访问权限总数
- * @method void setTotalCount(integer $TotalCount) 设置访问权限总数
- * @method array getAclSet() 获取访问权限列表
- * @method void setAclSet(array $AclSet) 设置访问权限列表
+ * @method integer getId() 获取新建成功的用户组ID
+ * @method void setId(integer $Id) 设置新建成功的用户组ID
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DescribeAclsResponse extends AbstractModel
+class CreateUserGroupResponse extends AbstractModel
 {
     /**
-     * @var integer 访问权限总数
+     * @var integer 新建成功的用户组ID
      */
-    public $TotalCount;
-
-    /**
-     * @var array 访问权限列表
-     */
-    public $AclSet;
+    public $Id;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -45,8 +38,7 @@ class DescribeAclsResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param integer $TotalCount 访问权限总数
-     * @param array $AclSet 访问权限列表
+     * @param integer $Id 新建成功的用户组ID
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -62,17 +54,8 @@ class DescribeAclsResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("TotalCount",$param) and $param["TotalCount"] !== null) {
-            $this->TotalCount = $param["TotalCount"];
-        }
-
-        if (array_key_exists("AclSet",$param) and $param["AclSet"] !== null) {
-            $this->AclSet = [];
-            foreach ($param["AclSet"] as $key => $value){
-                $obj = new Acl();
-                $obj->deserialize($value);
-                array_push($this->AclSet, $obj);
-            }
+        if (array_key_exists("Id",$param) and $param["Id"] !== null) {
+            $this->Id = $param["Id"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

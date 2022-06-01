@@ -18,28 +18,28 @@ namespace TencentCloud\Dasb\V20191018\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateAcl返回参数结构体
+ * AddDeviceGroupMembers请求参数结构体
  *
- * @method integer getId() 获取新建成功的访问权限ID
- * @method void setId(integer $Id) 设置新建成功的访问权限ID
- * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
- * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+ * @method integer getId() 获取资产组ID
+ * @method void setId(integer $Id) 设置资产组ID
+ * @method array getMemberIdSet() 获取需要添加到资产组的资产ID集合
+ * @method void setMemberIdSet(array $MemberIdSet) 设置需要添加到资产组的资产ID集合
  */
-class CreateAclResponse extends AbstractModel
+class AddDeviceGroupMembersRequest extends AbstractModel
 {
     /**
-     * @var integer 新建成功的访问权限ID
+     * @var integer 资产组ID
      */
     public $Id;
 
     /**
-     * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * @var array 需要添加到资产组的资产ID集合
      */
-    public $RequestId;
+    public $MemberIdSet;
 
     /**
-     * @param integer $Id 新建成功的访问权限ID
-     * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * @param integer $Id 资产组ID
+     * @param array $MemberIdSet 需要添加到资产组的资产ID集合
      */
     function __construct()
     {
@@ -58,8 +58,8 @@ class CreateAclResponse extends AbstractModel
             $this->Id = $param["Id"];
         }
 
-        if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
-            $this->RequestId = $param["RequestId"];
+        if (array_key_exists("MemberIdSet",$param) and $param["MemberIdSet"] !== null) {
+            $this->MemberIdSet = $param["MemberIdSet"];
         }
     }
 }

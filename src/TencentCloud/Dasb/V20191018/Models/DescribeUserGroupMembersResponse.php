@@ -18,26 +18,26 @@ namespace TencentCloud\Dasb\V20191018\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeAcls返回参数结构体
+ * DescribeUserGroupMembers返回参数结构体
  *
- * @method integer getTotalCount() 获取访问权限总数
- * @method void setTotalCount(integer $TotalCount) 设置访问权限总数
- * @method array getAclSet() 获取访问权限列表
- * @method void setAclSet(array $AclSet) 设置访问权限列表
+ * @method integer getTotalCount() 获取用户组成员总数
+ * @method void setTotalCount(integer $TotalCount) 设置用户组成员总数
+ * @method array getUserSet() 获取用户组成员列表
+ * @method void setUserSet(array $UserSet) 设置用户组成员列表
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DescribeAclsResponse extends AbstractModel
+class DescribeUserGroupMembersResponse extends AbstractModel
 {
     /**
-     * @var integer 访问权限总数
+     * @var integer 用户组成员总数
      */
     public $TotalCount;
 
     /**
-     * @var array 访问权限列表
+     * @var array 用户组成员列表
      */
-    public $AclSet;
+    public $UserSet;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -45,8 +45,8 @@ class DescribeAclsResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param integer $TotalCount 访问权限总数
-     * @param array $AclSet 访问权限列表
+     * @param integer $TotalCount 用户组成员总数
+     * @param array $UserSet 用户组成员列表
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -66,12 +66,12 @@ class DescribeAclsResponse extends AbstractModel
             $this->TotalCount = $param["TotalCount"];
         }
 
-        if (array_key_exists("AclSet",$param) and $param["AclSet"] !== null) {
-            $this->AclSet = [];
-            foreach ($param["AclSet"] as $key => $value){
-                $obj = new Acl();
+        if (array_key_exists("UserSet",$param) and $param["UserSet"] !== null) {
+            $this->UserSet = [];
+            foreach ($param["UserSet"] as $key => $value){
+                $obj = new User();
                 $obj->deserialize($value);
-                array_push($this->AclSet, $obj);
+                array_push($this->UserSet, $obj);
             }
         }
 

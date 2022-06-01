@@ -18,26 +18,26 @@ namespace TencentCloud\Dasb\V20191018\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeAcls返回参数结构体
+ * DescribeDeviceGroupMembers返回参数结构体
  *
- * @method integer getTotalCount() 获取访问权限总数
- * @method void setTotalCount(integer $TotalCount) 设置访问权限总数
- * @method array getAclSet() 获取访问权限列表
- * @method void setAclSet(array $AclSet) 设置访问权限列表
+ * @method integer getTotalCount() 获取资产组成员总数
+ * @method void setTotalCount(integer $TotalCount) 设置资产组成员总数
+ * @method array getDeviceSet() 获取资产组成员列表
+ * @method void setDeviceSet(array $DeviceSet) 设置资产组成员列表
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DescribeAclsResponse extends AbstractModel
+class DescribeDeviceGroupMembersResponse extends AbstractModel
 {
     /**
-     * @var integer 访问权限总数
+     * @var integer 资产组成员总数
      */
     public $TotalCount;
 
     /**
-     * @var array 访问权限列表
+     * @var array 资产组成员列表
      */
-    public $AclSet;
+    public $DeviceSet;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -45,8 +45,8 @@ class DescribeAclsResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param integer $TotalCount 访问权限总数
-     * @param array $AclSet 访问权限列表
+     * @param integer $TotalCount 资产组成员总数
+     * @param array $DeviceSet 资产组成员列表
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -66,12 +66,12 @@ class DescribeAclsResponse extends AbstractModel
             $this->TotalCount = $param["TotalCount"];
         }
 
-        if (array_key_exists("AclSet",$param) and $param["AclSet"] !== null) {
-            $this->AclSet = [];
-            foreach ($param["AclSet"] as $key => $value){
-                $obj = new Acl();
+        if (array_key_exists("DeviceSet",$param) and $param["DeviceSet"] !== null) {
+            $this->DeviceSet = [];
+            foreach ($param["DeviceSet"] as $key => $value){
+                $obj = new Device();
                 $obj->deserialize($value);
-                array_push($this->AclSet, $obj);
+                array_push($this->DeviceSet, $obj);
             }
         }
 
